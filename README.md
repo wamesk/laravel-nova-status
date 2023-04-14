@@ -1,6 +1,7 @@
 
 ## 1. Preview
 <img alt="preview" src="statuses.png">
+<img alt="preview" src="img2.png">
 <br><br>
 
 ## 2. Required
@@ -49,20 +50,9 @@ Nova::mainMenu(function (Request $request, Menu $menu) {
 ** **
 
 ``` php
-BelongsTo::make(__('order.field.status'), 'statuses', \App\Nova\OrderStatus::class)
-    ->relatableQueryUsing(function (NovaRequest $request, Builder $query) {
-        $query->whereIn('model', ['0']);  // set model number 
-    })
-    ->hideFromIndex()
-    ->hideFromDetail(),
+use App\Utils\Helpers\StatusFields;
 
-Text::make(__('order.field.status'), 'status_id')
-    ->displayUsing(fn () => StatusField::index($this->statuses))
-    ->asHtml()
-    ->sortable()
-    ->filterable()
-    ->exceptOnForms()
-    ->showOnPreview(),
+...StatusFields::get($this, '0'), // set your model category
 ``` 
 
 - ### Add to your Model

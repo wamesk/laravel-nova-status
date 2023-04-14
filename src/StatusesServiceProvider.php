@@ -28,7 +28,7 @@ class StatusesServiceProvider extends ServiceProvider
             // Export lang
             $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], 'language');
             // Export Utils
-          //  $this->publishes([__DIR__ . '/../app/Utils/Models' => app_path('Utils')], 'Utils');
+            $this->publishes([__DIR__ . '/../app/Utils/Helpers' => app_path('Utils')], 'Utils');
         }
 
     }
