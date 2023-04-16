@@ -80,6 +80,8 @@ class Status extends BaseResource
                         ->rules('required')
                         ->displayUsing(fn () => __(config('wame.color.text.' . $this->color))),
 
+                    // \NormanHuth\FontAwesomeField\FontAwesome::make(__('Icon'), 'icon'),
+
                     Select::make(__('status.field.category'), 'model')
                         //->options(__('status.selected') )
                         ->options(Translator::arrayValue( config('wame-statuses.selectTypes') ))

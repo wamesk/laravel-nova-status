@@ -2,6 +2,7 @@
 ## 1. Preview
 <img alt="preview" src="statuses.png">
 <img alt="preview" src="img2.png">
+<img alt="preview" src="img3.png">
 <br><br>
 
 ## 2. Required
@@ -10,7 +11,8 @@
 "kongulov/nova-tab-translatable": "^2.0",
 "wamesk/laravel-commands": "^1.0",
 "wamesk/laravel-nova-language": "dev-main",
-"wamesk/laravel-nova-slovak-lang": "^1.0"
+"wamesk/laravel-nova-slovak-lang": "^1.0",
+"norman-huth/nova-font-awesome-field": "^1.0"
 ```
 <br>
 
@@ -46,7 +48,7 @@ Nova::mainMenu(function (Request $request, Menu $menu) {
 });
 ```
 
-- ### Add to your Nova Model
+- ### Add fields to your Nova Model
 ** **
 
 ``` php
@@ -67,6 +69,7 @@ use App\Utils\Helpers\StatusFields;
 ``` 
 
 - ### Add migrations
+php artisan make:migration add_status_to_orders
 ```php
 /* add column to your model*/
 $table->foreignUlid('status_id')->nullable()->constrained('statuses')->cascadeOnUpdate()->nullOnDelete();
@@ -81,6 +84,10 @@ set count and types Models in `config/wame-statuses.php`
         '0' => 'status.selected.0',
         '1' => 'status.selected.1'
     ],
+```
+If you want too icons uncomment this
+```php
+ \NormanHuth\FontAwesomeField\FontAwesome::make(__('Icon'), 'icon'),
 ```
 
 - ### Edit translates
