@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace App\Utils\Helpers;
 
-use App\Nova\Order\StatusField;
+use App\Nova\Status\StatusField;
 use Illuminate\Database\Eloquent\Builder;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;

@@ -27,6 +27,8 @@ class StatusesServiceProvider extends ServiceProvider
             $this->publishes([__DIR__ . '/../app/Nova' => app_path('Nova')], 'statuses');
             // Export lang
             $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], 'language');
+            // Export css
+            $this->publishes([__DIR__ . '/../resources/css' => resource_path('css')], 'css');
             // Export Utils
             $this->publishes([__DIR__ . '/../app/Utils/Helpers' => app_path('Utils')], 'Utils');
         }
