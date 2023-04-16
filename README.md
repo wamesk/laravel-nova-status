@@ -88,6 +88,7 @@ set count and types Models in `config/wame-statuses.php`
 If you want too icons uncomment this
 ```php
  \NormanHuth\FontAwesomeField\FontAwesome::make(__('Icon'), 'icon'),
+add ->nullable() nad remove icon is also aviable
 ```
 
 - ### Edit translates
