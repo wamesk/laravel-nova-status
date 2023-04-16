@@ -2,7 +2,7 @@
 ## 1. Preview
 <img alt="preview" src="statuses.png">
 <img alt="preview" src="img2.png">
-<img alt="preview" src="img3.png">
+<img alt="preview" src="img3.jpg">
 <br><br>
 
 ## 2. Required
