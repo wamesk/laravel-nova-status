@@ -1,6 +1,10 @@
 {
     "name": "wamesk/stauses",
     "description": "package create Statuses",
+    "keywords": [
+        "laravel",
+        "status"
+    ],
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",

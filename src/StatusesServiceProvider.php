@@ -22,15 +22,15 @@ class StatusesServiceProvider extends ServiceProvider
             //export config
             $this->publishes([__DIR__.'/../config' => config_path('')], 'config');
             // Export Model
-            $this->publishes([__DIR__.'/../app/Models' => app_path('Models')], 'models');
+            $this->publishes([__DIR__.'/../app/Models/Status.php' => app_path('Models/Status.php')], 'models');
              //Export Nova resource
-            $this->publishes([__DIR__ . '/../app/Nova' => app_path('Nova')], 'statuses');
+            $this->publishes([__DIR__ . '/../app/Nova' => app_path('Nova')], ['nova', 'statuses']);
             // Export lang
-            $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], 'language');
+            $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], ['language', 'statuses']);
             // Export css
-            $this->publishes([__DIR__ . '/../resources/css' => resource_path('css')], 'css');
+            $this->publishes([__DIR__ . '/../resources/css' => resource_path('css')], ['css', 'statuses']);
             // Export Utils
-            $this->publishes([__DIR__ . '/../app/Utils/Helpers' => app_path('Utils')], 'Utils');
+            $this->publishes([__DIR__ . '/../app/Utils/Helpers' => app_path('Utils')], ['utils', 'statuses']);
         }
 
     }
