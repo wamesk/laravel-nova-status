@@ -29,7 +29,7 @@ Wame\Statuses\StatusesServiceProvider::class,
 php artisan vendor:publish --provider=Wame\Statuses\StatusesServiceProvider
 
  php artisan db:seed --class=LanguageSeeder
- php artisan db:seed --class=OrderStatusSeeder
+ // php artisan db:seed --class=OrderStatusSeeder
 ```
 <br>
 
@@ -78,14 +78,6 @@ $table->foreignUlid('status_id')->nullable()->constrained('statuses')->cascadeOn
 <br>
 
 ## 5. Configuration
-- ### Set config
-set count and types Models in `config/wame-statuses.php`
-```php
-  'selectTypes' => [
-        '0' => 'status.selected.0',
-        '1' => 'status.selected.1'
-    ],
-```
 <br>
 
 - ### Edit translates
@@ -105,7 +97,9 @@ set languages in `tab-translatable.php`
 ```
 <br>
 
-- ### If you want too icons 
+## 5. More options / extensions
+
+- ### If you want too Icons 
 uncomment this
 ```php
  \NormanHuth\FontAwesomeField\FontAwesome::make(__('Icon'), 'icon'),
@@ -116,12 +110,12 @@ Nova::style('status_icons', resource_path('css/icon_fields.css'));
 ```
 <br>
 
-- ### If you have only one category comment this in Nova Model Status
+- ### If you want to use categories for more Models
+uncomment this in Nova Model Status
 ```php
  Select::make(__('status.field.category'), 'model')
 ```
-
-    'selectTypes' => [
-        '0' => 'status.selected.0',
-        '1' => 'status.selected.1'
-    ],
+and set count models and add translates
+```php
+ $model_count = 1;
+```
