@@ -2,7 +2,8 @@
 
 declare(strict_types = 1);
 
-namespace App\Utils\Helpers;
+namespace Wame\Statuses\Utils\Helpers;
+
 
 use App\Nova\Status\StatusFieldCss;
 use Illuminate\Database\Eloquent\Builder;

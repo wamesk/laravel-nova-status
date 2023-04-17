@@ -4,13 +4,14 @@ declare(strict_types = 1);
 
 namespace App\Models;
 
-use App\Utils\Models\SortableTrait;
+
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\Translatable\HasTranslations;
+use Wame\Statuses\Utils\Models\SortableTrait;
 
 class Status extends BaseModel implements Sortable
 {

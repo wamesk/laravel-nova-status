@@ -1,6 +1,6 @@
 <?php
 
-use App\Utils\Helpers\StatusFields;
+use Wame\Statuses\Utils\Helpers\StatusFields;
 
 /*
  Set count your models and edit translate Selected []

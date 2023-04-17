@@ -6,7 +6,7 @@ namespace App\Nova\Status;
 
 use App\Models\Status;
 
-class StatusField
+class StatusFieldCss
 {
     public static function index($orderStatus)
     {
