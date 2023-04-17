@@ -16,5 +16,12 @@
         "psr-4": {
             "Wame\\Statuses\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wame\\Statuses\\StatusesServiceProvider"
+            ]
+        }
     }
 }
