@@ -81,13 +81,6 @@ $table->foreignUlid('status_id')->nullable()->constrained('statuses')->cascadeOn
 <br>
 
 - ### Edit translates
-set languages in `tab-translatable.php` 
-```php
-    'locales' => [
-            'sk'
-        ],
-    'required' => 'required_lang:sk',
-```
  edit translates  `resources/lang/sk/status.php `
 ```php
     'selected' => [
@@ -118,4 +111,15 @@ uncomment this in Nova Model Status
 and set count models and add translates
 ```php
  $model_count = 1;
+```
+
+## Add Language
+Add or delete language in language menu,
+set languages in `tab-translatable.php`,
+
+```php
+    'locales' => [
+            'sk'
+        ],
+    'required' => 'required_lang:sk',
 ```
