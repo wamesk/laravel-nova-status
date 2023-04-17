@@ -1,14 +1,20 @@
 /* Nova Field CSS */
 .status-icon svg{
-    height: 23px !important;
-    filter: invert(100%);
+    height: 22px !important;
     color:white;
     padding-top:2px ;
+}
+
+.status-icon-container{
+    padding: 7px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 33px;
 }
 
 .status-icon {
     display: inline-flex;
     position: relative;
-    top:7px;
-    margin-right:20px;
+    margin-right:15px;
 }

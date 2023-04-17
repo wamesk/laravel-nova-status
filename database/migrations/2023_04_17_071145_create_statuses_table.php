@@ -21,7 +21,7 @@ return new class extends Migration
             $table->enum('color', array_keys(config('wame-statuses.color.text')));
             $table->unsignedInteger('sort')->default(0);
             $table->string('model')->nullable()->default(0);
-            $table->string('icon')->nullable();
+            $table->text('icon')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -10,12 +10,13 @@ class StatusFieldCss
 {
     public static function index($orderStatus)
     {
-        $orderStatus->icon ? $orderStatusIcon = '<span class="status-icon">' . $orderStatus->icon . '</span>' : $orderStatusIcon = '';
+        $svg_color = $orderStatus->color ? 'filter:invert(100%)' : '';
+        $orderStatus->icon ? $orderStatusIcon = "<span class='status-icon' style=$svg_color> $orderStatus->icon </span>" : $orderStatusIcon = '';
+
         return
-            '<span class="px-3 py-1 rounded-full font-bold" style="background-color: ' .
+            '<span class="status-icon-container px-3 py-1 rounded-full font-bold" style="background-color: ' .
             $orderStatus->background . '; color: ' . (Status::COLOR_LIGHT === $orderStatus->color ? '#ffffff' : '#000000') . ';">'
-            . $orderStatusIcon .
-            $orderStatus->title .
+                . $orderStatusIcon . $orderStatus->title .
             '</span>';
     }
 }
