@@ -30,7 +30,7 @@ class StatusesServiceProvider extends ServiceProvider
             // Export css
             $this->publishes([__DIR__ . '/../resources/css' => resource_path('css')], ['css', 'statuses']);
             // Export Utils
-            $this->publishes([__DIR__ . '/../app/Utils/Helpers' => app_path('Utils')], ['utils', 'statuses']);
+            $this->publishes([__DIR__ . '/../app/Utils/Helpers' => app_path('Utils/Helpers')], ['utils', 'statuses']);
         }
 
     }
