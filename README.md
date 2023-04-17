@@ -27,20 +27,24 @@ Wame\Statuses\StatusesServiceProvider::class,
 - ### vendor publish   -- statusesServiceProvider
 ```php
 php artisan vendor:publish --provider="Wame\Statuses\StatusesServiceProvider"
-
- php artisan db:seed --class=LanguageSeeder
- // php artisan db:seed --class=OrderStatusSeeder
+php artisan vendor:publish --provider="Wame\LaravelNovaLanguage\PackageServiceProvider"
 ```
-<br>
-
-## 4. Usage
-
-- ### Add and run migrations
+- ### add and run migrations
 php artisan make:migration add_status_to_orders
 ```php
 /* add column to your model*/
 $table->foreignUlid('status_id')->nullable()->constrained('statuses')->cascadeOnUpdate()->nullOnDelete();
+php artisan migration
 ```
+- ### run seeders
+```php
+ php artisan db:seed --class=LanguageSeeder
+ // php artisan db:seed --class=StatusSeeder
+```
+
+<br>
+
+## 4. Usage
 
 - ### Add to your Nova Menu   
 `MenuItem::resource(Statuses::class),` <br>
@@ -56,6 +60,14 @@ Nova::mainMenu(function (Request $request, Menu $menu) {
 });
 ```
 
+- ### Add to your Model
+
+``` php
+    public function statuses(): BelongsTo
+    {
+        return $this->belongsTo(Status::class, 'status_id');
+    }
+```
 - ### Add fields to your Nova Model
 ** **
 
@@ -63,17 +75,6 @@ Nova::mainMenu(function (Request $request, Menu $menu) {
 use App\Utils\Helpers\StatusFields;
 
 ...StatusFields::get($this, '0'), // set your model category if you use more categories
-``` 
-
-- ### Add to your Model
-
-** **
-
-``` php
-    public function statuses(): BelongsTo
-    {
-        return $this->belongsTo(OrderStatus::class, 'status_id');
-    }
 ``` 
 <br>
 

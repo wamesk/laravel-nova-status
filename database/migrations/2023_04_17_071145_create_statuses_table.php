@@ -18,9 +18,9 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->json('title');
             $table->string('background', 7);
-            $table->enum('color', array_keys(config('wame.color.text')));
+            $table->enum('color', array_keys(config('wame-statuses.color.text')));
             $table->unsignedInteger('sort')->default(0);
-            $table->string('model')->nullable();
+            $table->string('model')->nullable()->default(0);
             $table->string('icon')->nullable();
             $table->timestamps();
             $table->softDeletes();

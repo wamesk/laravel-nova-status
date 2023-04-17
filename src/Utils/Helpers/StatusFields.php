@@ -16,7 +16,7 @@ class StatusFields
     public static function get($status, $category): array
     {
         return [
-            BelongsTo::make(__('order.field.status'), 'statuses', \App\Nova\Status::class)
+            BelongsTo::make(__('status.field.status'), 'statuses', \App\Nova\Status::class)
                 ->relatableQueryUsing(function (NovaRequest $request, Builder $query) use ($category) {
                     $query->whereIn('model', [$category]);  // name in config
                 })
@@ -24,7 +24,7 @@ class StatusFields
                 ->hideFromIndex()
                 ->hideFromDetail(),
 
-            Text::make(__('order.field.status'), 'status_id')
+            Text::make(__('status.field.status'), 'status_id')
                 ->displayUsing(fn() => StatusFieldCss::index($status->statuses))
                 ->asHtml()
                 ->sortable()
