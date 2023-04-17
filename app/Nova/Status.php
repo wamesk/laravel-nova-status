@@ -75,19 +75,28 @@ class Status extends BaseResource
 
                     Select::make(__('status.field.color'), 'color')
                         ->help(__('status.field.color.help'))
-                        ->options(Translator::arrayValue(config('wame.color.text')))
+                        ->options(Translator::arrayValue(config('wame-statuses.color.text')))
                         ->required()
                         ->rules('required')
-                        ->displayUsing(fn () => __(config('wame.color.text.' . $this->color))),
+                        ->displayUsing(fn () => __(config('wame-statuses.color.text.' . $this->color))),
 
-                    // \NormanHuth\FontAwesomeField\FontAwesome::make(__('Icon'), 'icon'),
+                    /*
+                     * Uncomment if you want to use Icons
+                     */
+//                    \NormanHuth\FontAwesomeField\FontAwesome::make(__('status.field.icon'), 'icon')
+//                        ->nullable()   // remove icon is also available
+//                        ->setText('header', __('status.field.edit_icon'))  // added translates
+//                        ->setText('more', __('status.field.load_more'))
+//                        ->setText('remove', __('status.field.remove_icon')),
 
-                    Select::make(__('status.field.category'), 'model')
-                        //->options(__('status.selected') )
-                        ->options(Translator::arrayValue( config('wame-statuses.selectTypes') ))
-                        ->displayUsing(fn ($name) => __(config("wame-statuses.selectTypes.$name")))
-                        ->sortable()
-                        ->filterable(),
+                    /*
+                    * Uncomment if you want to use Categories for more models
+                    */
+//                    Select::make(__('status.field.category'), 'model')
+//                        ->options(Translator::arrayValue( config('wame-statuses.selectTypes') ))
+//                        ->displayUsing(fn ($name) => __(config("wame-statuses.selectTypes.$name")))
+//                        ->sortable()
+//                        ->filterable(),
                 ]),
             ]),
         ];

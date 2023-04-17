@@ -8,10 +8,11 @@
 ## 2. Required
 
 ```php
-"kongulov/nova-tab-translatable": "^2.0",
 "wamesk/laravel-commands": "^1.0",
 "wamesk/laravel-nova-language": "dev-main",
 "wamesk/laravel-nova-slovak-lang": "^1.0",
+"wamesk/utils": "^1.1",
+"kongulov/nova-tab-translatable": "^2.0",
 "norman-huth/nova-font-awesome-field": "^1.0"
 ```
 <br>
@@ -27,8 +28,8 @@ Wame\Statuses\StatusesServiceProvider::class,
 ```php
 php artisan vendor:publish --provider=Wame\Statuses\StatusesServiceProvider
 
- php artisan db:seed --class=OrderStatusSeeder
  php artisan db:seed --class=LanguageSeeder
+ php artisan db:seed --class=OrderStatusSeeder
 ```
 <br>
 
@@ -54,7 +55,7 @@ Nova::mainMenu(function (Request $request, Menu $menu) {
 ``` php
 use App\Utils\Helpers\StatusFields;
 
-...StatusFields::get($this, '0'), // set your model category
+...StatusFields::get($this, '0'), // set your model category if you use more categories
 ``` 
 
 - ### Add to your Model
@@ -85,11 +86,7 @@ set count and types Models in `config/wame-statuses.php`
         '1' => 'status.selected.1'
     ],
 ```
-If you want too icons uncomment this
-```php
- \NormanHuth\FontAwesomeField\FontAwesome::make(__('Icon'), 'icon'),
-add ->nullable() nad remove icon is also aviable
-```
+<br>
 
 - ### Edit translates
 set languages in `tab-translatable.php` 
@@ -106,3 +103,25 @@ set languages in `tab-translatable.php`
         '1' => 'napady',
     ],
 ```
+<br>
+
+- ### If you want too icons 
+uncomment this
+```php
+ \NormanHuth\FontAwesomeField\FontAwesome::make(__('Icon'), 'icon'),
+```
+and add CSS to NovaSericeProvider
+```php
+Nova::style('status_icons', resource_path('css/icon_fields.css'));
+```
+<br>
+
+- ### If you have only one category comment this in Nova Model Status
+```php
+ Select::make(__('status.field.category'), 'model')
+```
+
+    'selectTypes' => [
+        '0' => 'status.selected.0',
+        '1' => 'status.selected.1'
+    ],

@@ -31,4 +31,18 @@ class StatusFields
                 ->showOnPreview()
         ];
     }
+
+    /**
+     * @param int $model_count
+     * @return array|string[]
+     */
+    public static function getSelectTypes(int $model_count): array
+    {
+        $selectTypes = [];
+        for ($x = 0; $x < $model_count; $x++) {
+            $selectTypes += ["$x" => "status.selected.$x"];
+        }
+        return $selectTypes;
+    }
+
 }

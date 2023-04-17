@@ -1,12 +1,12 @@
 /* Nova Field CSS */
-.obrazok svg{
+.status-icon svg{
     height: 23px !important;
     filter: invert(100%);
     color:white;
     padding-top:2px ;
 }
 
-.obrazok {
+.status-icon {
     display: inline-flex;
     position: relative;
     top:7px;

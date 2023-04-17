@@ -1,24 +1,23 @@
 <?php
 
+use App\Utils\Helpers\StatusFields;
+
+/*
+ Set count your models and edit translate Selected []
+ */
+$model_count = 1;
+
+
+$selectTypes = StatusFields::getSelectTypes($model_count);
 return [
-
-    /*
-    Set count your models and edit translate Selected []
-    */
-    'selectTypes' => [
-        '0' => 'status.selected.0',
-        '1' => 'status.selected.1'
-    ],
-
+    'selectTypes' => $selectTypes,
 
     'color' => [
         'text' => [
-            '0' => 'color.text.dark',
-            '1' => 'color.text.light',
+            '0' => 'status.text.dark',
+            '1' => 'status.text.light',
         ],
     ],
-
-    'status_use' => true,
 
 ];
 
