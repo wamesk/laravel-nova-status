@@ -37,8 +37,14 @@ class StatusFields
      * @param int $model_count
      * @return array|string[]
      */
-    public static function getSelectTypes(int $model_count): array
+    public static function getSelectTypes($model_count): array
     {
+        if ($model_count == 'default'){
+            $config = include(base_path('resources/lang/sk/status.php'));
+            $selected = $config['selected'];
+            $model_count = count($selected);
+        }
+
         $selectTypes = [];
         for ($x = 0; $x < $model_count; $x++) {
             $selectTypes += ["$x" => "status.selected.$x"];

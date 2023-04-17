@@ -3,12 +3,11 @@
 use Wame\Statuses\Utils\Helpers\StatusFields;
 
 /*
- Set count your models and edit translate Selected []
+ Set count your models only if you don't use sk translate ( Selected [] )
  */
-$model_count = 1;
-
-
+$model_count = 'default'; // from sk translate
 $selectTypes = StatusFields::getSelectTypes($model_count);
+
 return [
     'selectTypes' => $selectTypes,
 

@@ -3,7 +3,7 @@
 <img alt="preview" src="statuses.png">
 <img alt="preview" src="img2.png">
 <img alt="preview" src="img3.jpg">
-<br><br>
+<br>
 
 ## 2. Required
 
@@ -15,7 +15,6 @@
 "kongulov/nova-tab-translatable": "^2.0",
 "norman-huth/nova-font-awesome-field": "^1.0"
 ```
-<br>
 
 ## 3. Instalation
 
@@ -46,9 +45,23 @@ php artisan migration
 
 ## 4. Usage
 
-- ### Add to your Nova Menu   
+- ### Add to your Model
+``` php
+    public function statuses(): BelongsTo
+    {
+        return $this->belongsTo(Status::class, 'status_id');  // Choose your model
+    }
+```
+- ### Add fields to your Nova Model
+``` php
+use App\Utils\Helpers\StatusFields;
+
+...StatusFields::get($this, '0'), // set your model category if you use more categories
+``` 
+
+- ### Add to your Nova Menu
 `MenuItem::resource(Statuses::class),` <br>
-  `MenuItem::resource(Languages::class),`
+`MenuItem::resource(Languages::class),`
 ```php
 Nova::mainMenu(function (Request $request, Menu $menu) {
     return $menu->append(
@@ -59,27 +72,9 @@ Nova::mainMenu(function (Request $request, Menu $menu) {
     );
 });
 ```
-
-- ### Add to your Model
-
-``` php
-    public function statuses(): BelongsTo
-    {
-        return $this->belongsTo(Status::class, 'status_id');
-    }
-```
-- ### Add fields to your Nova Model
-** **
-
-``` php
-use App\Utils\Helpers\StatusFields;
-
-...StatusFields::get($this, '0'), // set your model category if you use more categories
-``` 
 <br>
 
 ## 5. Configuration
-<br>
 
 - ### Edit translates
  edit translates  `resources/lang/sk/status.php `
@@ -93,7 +88,13 @@ use App\Utils\Helpers\StatusFields;
 
 ## 5. More options / extensions
 
-- ### If you want too Icons 
+- ### If you want to use CATEGORIES <small>for more Models </small>
+uncomment this in Nova Model Status and add translates for models
+```php
+ Select::make(__('status.field.category'), 'model')
+```
+
+- ### If you want to use ICONS 
 uncomment this
 ```php
  \NormanHuth\FontAwesomeField\FontAwesome::make(__('Icon'), 'icon'),
@@ -104,15 +105,6 @@ Nova::style('status_icons', resource_path('css/icon_fields.css'));
 ```
 <br>
 
-- ### If you want to use categories for more Models
-uncomment this in Nova Model Status
-```php
- Select::make(__('status.field.category'), 'model')
-```
-and set count models and add translates
-```php
- $model_count = 1;
-```
 
 ## Add Language
 Add or delete language in language menu,
@@ -124,3 +116,4 @@ set languages in `tab-translatable.php`,
         ],
     'required' => 'required_lang:sk',
 ```
+

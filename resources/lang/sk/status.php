@@ -6,8 +6,7 @@ return [
      * Set translates for your models !
      */
     'selected' => [
-        '0' => 'prispevky',
-        '1' => 'napady',
+        '0' => 'príspevky',
     ],
 
 
