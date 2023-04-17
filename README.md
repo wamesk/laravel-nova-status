@@ -35,6 +35,13 @@ php artisan vendor:publish --provider=Wame\Statuses\StatusesServiceProvider
 
 ## 4. Usage
 
+- ### Add and run migrations
+php artisan make:migration add_status_to_orders
+```php
+/* add column to your model*/
+$table->foreignUlid('status_id')->nullable()->constrained('statuses')->cascadeOnUpdate()->nullOnDelete();
+```
+
 - ### Add to your Nova Menu   
 `MenuItem::resource(Statuses::class),` <br>
   `MenuItem::resource(Languages::class),`
@@ -68,13 +75,6 @@ use App\Utils\Helpers\StatusFields;
         return $this->belongsTo(OrderStatus::class, 'status_id');
     }
 ``` 
-
-- ### Add migrations
-php artisan make:migration add_status_to_orders
-```php
-/* add column to your model*/
-$table->foreignUlid('status_id')->nullable()->constrained('statuses')->cascadeOnUpdate()->nullOnDelete();
-```
 <br>
 
 ## 5. Configuration
