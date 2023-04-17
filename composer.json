@@ -1,5 +1,5 @@
 {
-    "name": "wame/stauses",
+    "name": "wamesk/stauses",
     "description": "package create Statuses",
     "type": "library",
     "license": "MIT",
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Wamesk\\Statuses\\": "src/"
+            "Wame\\Statuses\\": "src/"
         }
     }
 }

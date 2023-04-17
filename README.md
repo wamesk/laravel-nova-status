@@ -26,7 +26,7 @@ Wame\Statuses\StatusesServiceProvider::class,
 
 - ### vendor publish   -- statusesServiceProvider
 ```php
-php artisan vendor:publish --provider=Wame\Statuses\StatusesServiceProvider
+php artisan vendor:publish --provider="Wame\Statuses\StatusesServiceProvider"
 
  php artisan db:seed --class=LanguageSeeder
  // php artisan db:seed --class=OrderStatusSeeder
