@@ -108,13 +108,13 @@ Nova::style('status_icons', resource_path('css/icon_fields.css'));
 
 ## Add Language
 Add or delete language in language menu,
-set languages in `tab-translatable.php`,
+set languages in `wame-statuses.php` or `tab-translatable.php`,
 
 ```php
+    'required' => 'required_lang:sk',
     'locales' => [
             'sk'
         ],
-    'required' => 'required_lang:sk',
 ```
 Check config/tab-transatable https://github.com/wamesk/laravel-nova-status/blob/main/config/tab-translatable.php
 
