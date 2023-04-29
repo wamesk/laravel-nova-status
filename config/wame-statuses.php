@@ -10,6 +10,8 @@ $selectTypes = StatusFields::getSelectTypes($model_count);
 
 return [
     'selectTypes' => $selectTypes,
+ 
+   'required' => 'required_lang:sk',
 
     'color' => [
         'text' => [
