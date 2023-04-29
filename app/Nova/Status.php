@@ -60,7 +60,7 @@ class Status extends BaseResource
                     NovaTabTranslatable::make([
                         Text::make(__('status.field.title'), 'title')
                             ->help(__('status.field.title.help'))
-                            ->rules(config('tab-translatable.required')),
+                            ->rules(config('wame-statuses.required')),
                     ])->onlyOnForms(),
 
                     Text::make(__('status.field.title'), 'title')
