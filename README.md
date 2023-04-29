@@ -116,4 +116,5 @@ set languages in `tab-translatable.php`,
         ],
     'required' => 'required_lang:sk',
 ```
+Check config/tab-transatable https://github.com/wamesk/laravel-nova-status/blob/main/config/tab-translatable.php
 
