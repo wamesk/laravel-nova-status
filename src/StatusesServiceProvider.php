@@ -12,7 +12,7 @@ class StatusesServiceProvider extends ServiceProvider
     {
        // $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations/2023_04_17_071145_create_statuses_table.php');
-      //  $this->mergeConfigFrom(__DIR__ . '/../config/reviews.php', 'reviews');
+        $this->mergeConfigFrom(__DIR__ . '/../config/tab-translatable.php', 'reviews');
 
         if ($this->app->runningInConsole()) {
             //export migration
