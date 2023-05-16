@@ -26,7 +26,7 @@ return [
     ],
 
     'field' => [
-        'status' => 'status',
+        'status' => 'Status',
         'title' => 'Názov',
         'icon' => 'Ikona',
         'remove_icon' => 'Odstrániť ikonu',
