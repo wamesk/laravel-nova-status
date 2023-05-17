@@ -22,7 +22,8 @@ class StatusFields
                 })
                 ->filterable()
                 ->hideFromIndex()
-                ->hideFromDetail(),
+                ->hideFromDetail()
+                ->updateRules('sometimes'),
 
             Text::make(__('status.field.status'), 'status_id')
                 ->displayUsing(fn() => StatusFieldCss::index($status->statuses))
