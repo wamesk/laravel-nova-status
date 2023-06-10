@@ -115,4 +115,3 @@ set languages in `wame-statuses.php` or `tab-translatable.php`,
         ],
 ```
 Check config/tab-transatable https://github.com/wamesk/laravel-nova-status/blob/main/config/tab-translatable.php
-
