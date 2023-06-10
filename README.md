@@ -9,8 +9,6 @@
 
 ```php
 "wamesk/laravel-commands": "^1.0",
-"wamesk/laravel-nova-language": "dev-main",
-"wamesk/laravel-nova-slovak-lang": "^1.0",
 "wamesk/utils": "^1.1",
 "kongulov/nova-tab-translatable": "^2.0",
 "norman-huth/nova-font-awesome-field": "^1.0"
