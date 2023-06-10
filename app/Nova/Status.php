@@ -65,7 +65,7 @@ class Status extends BaseResource
 
                     Text::make(__('status.field.title'), 'title')
                         ->filterable()
-                        ->exceptOnForms()
+                       // ->exceptOnForms()
                         ->showOnPreview(),
 
                     Color::make(__('status.field.background'), 'background')

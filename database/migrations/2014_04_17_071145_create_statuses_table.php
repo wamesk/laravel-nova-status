@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('background', 7);
             $table->enum('color', array_keys(config('wame-statuses.color.text')));
             $table->unsignedInteger('sort')->default(0);
+            $table->unsignedTinyInteger('category')->default(0);
             $table->string('model')->nullable()->default(0);
             $table->text('icon')->nullable();
             $table->timestamps();
