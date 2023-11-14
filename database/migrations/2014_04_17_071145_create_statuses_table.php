@@ -23,8 +23,8 @@ return new class extends Migration
             $table->unsignedTinyInteger('category')->default(0);
             $table->string('model')->nullable()->default(0);
             $table->text('icon')->nullable();
-            $table->timestamps();
-            $table->softDeletes();
+            $table->datetimes();
+            $table->softDeletesDatetime();
         });
     }
 
